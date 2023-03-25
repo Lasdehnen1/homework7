@@ -18,7 +18,7 @@ public class Main {
         int i = 0;
 
         while (total < overallMoneyToSave) {
-            total = total + moneyToSave;
+            total += moneyToSave;
             i++;
             System.out.println("Месяц " + i + " сумма накоплений равна " + total + " рублей.");
 
@@ -48,7 +48,7 @@ public class Main {
 
         for (int i = 0; i <= 10; i++) {
             int populationExtencion = (birthRate - deathRate) * population / 1000;
-            population = population + populationExtencion;
+            population += populationExtencion;
             System.out.println("Год " + i + ", численность населения составляет " + population + " человек");
         }
 
@@ -62,8 +62,7 @@ public class Main {
         int month = 0;
         while (moneyToSave > total) {
             month++;
-            double total1 = total * monthlyPercent / 100;
-            total = total + total1;
+            total += total * monthlyPercent/100;
 
             System.out.println("Месяц " + month + " накоплено " + total);
         }
@@ -78,8 +77,7 @@ public class Main {
         int month = 0;
         while (moneyToSave > total) {
             month++;
-            double total1 = total * monthlyPercent / 100;
-            total = total + total1;
+            total += total * monthlyPercent/100;
             if (month % 6 == 0) {
                 System.out.println("Месяц " + month + " накоплено " + total);
             }
@@ -96,8 +94,7 @@ public class Main {
         int monthsToSave = yearsToSave * 12;
         while (monthsToSave >= month) {
             month++;
-            double total1 = total * monthlyPercent / 100;
-            total = total + total1;
+            total += total * monthlyPercent/100;
             if (month % 6 == 0) {
                 System.out.println("Месяц " + month + " накоплено " + total);
             }
@@ -106,25 +103,29 @@ public class Main {
 
     public static void task7() {
         System.out.println("Задача 7");
-        int friday = 1;
-        for (int dayNumber = 1; dayNumber <= 31; dayNumber++) {
-            if (dayNumber == friday) {
-                System.out.println("Сегодня пятница, " + dayNumber + "-ое число. Необходимо отправить отчет.");
-                friday = friday + 7;
-            }
+        int friday = 3;
+
+        while (friday <= 31) {
+            System.out.println("Сегодня пятница, " + friday + "-ое число. Необходимо отправить отчет.");
+            friday = friday + 7;
         }
     }
 
     public static void task8() {
         System.out.println("Задача 8");
+        int currentYear = 2023;
+        int cometYear = 79;
+        int previousYear = currentYear - 200;
+        int futureYear = currentYear + 100;
 
-        for (int year = 1823; year <= 2123; year++) {
-            if (year % 79 == 0) {
-                System.out.println(year + " год");
+
+
+        for (int i = previousYear; i <= futureYear; i++) {
+            if (i % cometYear == 0) {
+                System.out.println(i + " год");
             }
         }
 
 
     }
-   
 }
